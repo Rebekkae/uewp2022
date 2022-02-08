@@ -56,7 +56,7 @@ def insert_student_record(name: str, email: str):
 def delete_student_record(uid: str):
     """Delete a selected student record from the `students` table."""
     query = '''DELETE FROM students WHERE uid = ?'''
-    cursor.execute(query, (uid))
+    cursor.execute(query, [uid])
     connection.commit()
 
 
